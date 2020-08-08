@@ -24,10 +24,28 @@ Log-in / sign-up page that saves their profile to the database .then take the us
 
 
 ## Functional Requirement
+##### ADMIN
+- Can delete user accounts
+- Update course work
+
+##### SQUIBS
+- Can log in
+
+##### MAGICAL
+- Can create a new account
+- Update profile 
+- Access course work
+
 
 #### Data Flow
 ![Domain Model for Data Flow](./public/assets/DOM.png
 )
 
 ## Non-Functional Requirements 
+##### Security 
+- Tokens will be used to pass data around for each user. This will allow users to know their profiles are kept private from other people. This will also allow users to hold their GingCoin balance with complete confidence that Crabbe and Goyle wont steal their hard earned GringCoin and spend it on their own Honeydukes shipment.
+
+##### Testing 
+- This will be our novella feature. Testing will help ensure Peeves can't somehow log on to Hogwarts and thwart all the students in their academic efforts. 
+ 
 
