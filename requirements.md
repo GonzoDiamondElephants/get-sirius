@@ -26,7 +26,8 @@ Log-in / sign-up page that saves their profile to the database .then take the us
 ## Functional Requirement
 
 #### Data Flow
-
+![Domain Model for Data Flow](./public/assets/DOM.png
+)
 
 ## Non-Functional Requirements 
 
