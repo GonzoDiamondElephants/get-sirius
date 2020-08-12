@@ -9,7 +9,6 @@ const UseHistory = () => {
       <div>
         <img src={user.picture} alt={user.name} />
         <p>{user.name}</p>
-        {JSON.stringify(user, null, 2)}
       </div>
     )
   );
