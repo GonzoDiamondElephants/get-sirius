@@ -7,7 +7,7 @@ const UseHistory = () => {
   return (
     isAuthenticated && (
       <div>
-        <img src={user.picture} alt={user.name} />
+        {/* <img src={user.picture} alt={user.name} /> */}
         <p>{user.name}</p>
       </div>
     )
