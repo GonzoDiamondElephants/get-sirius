@@ -3,19 +3,20 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 const LoginButton = () => {
   console.log('am i here');
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
-    <div>
-      <button
-        onClick={() => {
-          console.log('inside on click');
-          loginWithRedirect();
-        }}
-      >
-        Log In
-      </button>
-    </div>
+    !isAuthenticated && (
+      <div>
+        <button
+          onClick={() => {
+            loginWithRedirect();
+          }}
+        >
+          Log In
+        </button>
+      </div>
+    )
   );
 };
 
