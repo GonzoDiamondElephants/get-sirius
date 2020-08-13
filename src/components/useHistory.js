@@ -8,7 +8,7 @@ const UseHistory = () => {
     isAuthenticated && (
       <div>
         {/* <img src={user.picture} alt={user.name} /> */}
-        <p>{user.name}</p>
+        <p>{user.sub}</p>
       </div>
     )
   );

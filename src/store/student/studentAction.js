@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getUser = () => async (dispatch) => {
   let result = await axios.get('/student');
-  dispatch(getAllUsers(result.data));
+  console.log('result', result.data);
 
   const getAllUsers = (payload) => {
     return {
@@ -10,6 +10,7 @@ export const getUser = () => async (dispatch) => {
       payload,
     };
   };
+  dispatch(getAllUsers(result.data));
 };
 
 export const addUsers = (payload) => {
