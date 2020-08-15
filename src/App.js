@@ -3,6 +3,7 @@ import LoginButton from './components/loginButton.js';
 import LogoutButton from './components/logoutButton.js';
 import UsersHistory from './components/useHistory.js';
 import TestBackEnd from './components/testBackEnd.js';
+import ChatRoom from './components/chatRoom'
 import {useAuth0} from '@auth0/auth0-react';
 import store from '../src/store/index.js';
 import {Provider} from 'react-redux';
@@ -20,6 +21,7 @@ function App() {
       <Student/>
       <UsersHistory/>
       <TestBackEnd/>
+      <ChatRoom />
       </Provider>
     </>
   );
