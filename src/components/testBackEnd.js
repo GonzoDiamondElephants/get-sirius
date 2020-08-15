@@ -5,10 +5,8 @@ import axios from 'axios';
 const TestBackEnd = () => {
   const [potion, setPotion] = useState([]);
   const { isAuthenticated } = useAuth0();
-  console.log('potion', potion);
   useEffect(() => {
     axios.get('/potions').then((res) => {
-      console.log('res body', res);
       setPotion(res.data);
     });
   }, []);

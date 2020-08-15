@@ -8,6 +8,7 @@ import store from '../src/store/index.js';
 import {Provider} from 'react-redux';
 import Student from './components/student.js';
 
+
 function App() {
   const {isLoading} = useAuth0();
   if(isLoading) return(<div>Loading.......</div>)
@@ -18,7 +19,7 @@ function App() {
       <LoginButton />
       <LogoutButton />
       <Student/>
-      <UsersHistory/>
+      <UsersHistory />
       <TestBackEnd/>
       </Provider>
     </>
