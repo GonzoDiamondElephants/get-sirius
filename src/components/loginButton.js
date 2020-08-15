@@ -1,29 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import Axios from 'axios';
 
 const LoginButton = () => {
   const { loginWithRedirect, isAuthenticated, user } = useAuth0();
-  console.log('redirect2222222', user);
+  useEffect(() => {
+    if (!user) return;
+    const checker = async () => {
+      let currentStudent = Axios.get(`/student/${user.sub}`);
+      console.log('we are inside currentStudent', currentStudent);
+      if (currentStudent) {
+        Axios.post('/student', user)
+          .then((response) => {
+            return response.data.name;
+          })
+          .catch((e) => {
+            console.error(e);
+          });
+      }
+    };
+    checker();
+  });
 
-  const userPost = () => {
-    Axios.post('/student', user);
-    console
-      .log('i am in schema')
-      .then((response) => {
-        console.log('henok usersssss ', response);
-      })
-      .catch((e) => {
-        console.error(e);
-      });
-  };
   return (
     !isAuthenticated && (
       <div>
         <button
           onClick={() => {
             loginWithRedirect();
-            userPost();
           }}
         >
           Log In
