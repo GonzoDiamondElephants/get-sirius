@@ -1,0 +1,601 @@
+#mainContent {
+    padding: 55px 0px 0px 55px;
+}
+
+#leftColumn, #m-col, #rightColumn {
+   vertical-align: top;
+}
+
+#leftColumn {
+   width: 340px;
+   padding-top: 6px;
+}
+
+.leftComponentContainers {
+   padding: 20px;
+   box-shadow: 0px 3px 3px #ddd;
+}
+
+.leftSpacing {
+   margin-top: 28px;
+
+}
+
+.leftColIcons {
+   display: inline-block;
+   width: 24px;
+   height: 24px;
+   margin-right: 2px;
+   background-size: auto;
+   background-repeat: no-repeat;
+   vertical-align: middle;
+
+} 
+
+#introIcon {
+   background-image: url('https://imagizer.imageshack.com/img922/7749/C8tmwX.png');
+   background-position: 0 -87px;
+
+}
+
+#photoIcon {
+   background-image: url('https://imagizer.imageshack.com/img923/7847/sRapnM.png');
+   background-position: 0 0;
+
+}
+
+#quizIcon {
+   background-image: url('https://imagizer.imageshack.com/img922/5617/QpPVKn.png');
+}
+
+.leftSideHeaders{
+   position: relative;
+   padding-right: 24px;
+   margin-bottom: 15px;
+
+    span {
+         position: relative;
+         top: 2px;
+         color: #707070;
+         font-size: 18px;
+    }
+}
+
+.leftSideActionIcon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+
+         i {
+              display: block;
+              color: #ccc;
+              font-size: 18px;
+         }
+}
+
+#introBox {
+   color: #797979;
+   font-size: 14px;
+   line-height: 1.3;
+}
+
+#introLine {
+   margin-top: 17px;
+   margin-bottom: 10px;
+}
+
+
+
+#userLocation {
+    i {
+        color: #2196F3;
+        font-size: 16px;
+        margin-left: -3px;
+        margin-right: 2px;
+        margin-top: -1px;
+        vertical-align: middle;
+    }
+    a {
+        position: relative;
+        top: 1px;
+        color: #2196F3;
+    }
+}
+
+#photos {
+   padding: 2px;
+   margin: 15px -20px -20px -20px;
+
+   .td {
+       width: 33.333%;
+       height: 112px;
+       border: 2px solid #fff;
+       box-sizing: border-box;
+       background-color: #f1f1f1;
+       background-position: 50% 25%;
+       background-size: cover;
+   }
+// ------------ROW ONE-------------
+    .tb .tr:nth-child(1) .td:nth-child(1) {
+         background-image: url('https://talentrecap.com/wp-content/uploads/2020/04/ron-whisely-is-going-to-be-a-dad-1.jpg');
+    }
+
+    .tb .tr:nth-child(1) .td:nth-child(2) {
+         background-image: url('https://cdn.uconnectlabs.com/wp-content/uploads/sites/5/2018/04/Hermione-Granger-in-HP-and-the-sorcerer-s-stone-hermione-granger-13574341-960-540.jpg');
+    }
+    .tb .tr:nth-child(1) .td:nth-child(3) {
+         background-image: url('https://i.pinimg.com/originals/b8/4e/ed/b84eedc6cb8587bdcc83aa2c9805b198.jpg');
+    }
+
+// ------------ROW TWO-------------
+    .tb .tr:nth-child(2) .td:nth-child(1) {
+         background-image: url('https://qph.fs.quoracdn.net/main-qimg-b4e777abf57bca38f1001fad162675c1.webp');
+    }
+    .tb .tr:nth-child(2) .td:nth-child(2) {
+        background-image: url('https://em.wattpad.com/867903f3f0372c78c495b06fc4a82c37be6d48c9/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6f486c394e4a30664448433978773d3d2d3238353837323838352e313437313630353235333735376466653336323034353133343539382e6a7067?s=fit&w=720&h=720');
+    }
+    .tb .tr:nth-child(2) .td:nth-child(3) {
+         background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/cqDtIHanUkU44w0guYkEA/b2e26ba263d783a67ae2843fc2af4097/FredAndGeorge_WB_F5_AtGrimmauldPlace_HP5-FX-00152r.jpg');
+    }
+    .tb .tr:nth-child(2) .td:nth-child(3) {
+         background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/cqDtIHanUkU44w0guYkEA/b2e26ba263d783a67ae2843fc2af4097/FredAndGeorge_WB_F5_AtGrimmauldPlace_HP5-FX-00152r.jpg');
+    }
+
+// ------------ROW THREE-------------
+    .tb .tr:nth-child(3) .td:nth-child(1) {
+         background-image: url('https://vignette.wikia.nocookie.net/harrypotter/images/4/47/MaximeHagridDance_PM.jpg/revision/latest?cb=20161124191620');
+    }
+    .tb .tr:nth-child(3) .td:nth-child(2) {
+         background-image: url('https://images.immediate.co.uk/production/volatile/sites/3/2016/04/106401.jpg?quality=90&resize=617%2C411');
+    }
+    .tb .tr:nth-child(3) .td:nth-child(3) {
+         background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/6iqz6gF6Zaa84emmKeSIKo/9ba3bafda4c0c74189f4cd0f5ce61e22/AlbusDumbledore_WB_F5_DumbledoreClosingDoors_Promo_080615_Land.jpg?fm=jpg');
+    }
+}
+
+.quizContainer {
+    // background-color: orange;
+   padding: 2px;
+}
+
+.quizAction {
+    display: block;
+    padding: 8px;
+    border: 1px solid #eeeeee;
+    background-color: #fafafa;
+    border-radius: 4px;
+
+    img {
+         display: inline;
+         width: 24px;
+         height: 15px;
+         margin-right: 5px;
+         vertical-align: middle;
+    }
+    span
+    {
+        position: relative;
+        top: 1px;
+        color: #242424;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+
+#addToQuiz {
+    color: #858585;
+    text-align: center;
+    margin-top: 10px;
+    background-color: #fff;
+    border-color: #f1f1f1;
+
+    i {
+        font-size: 17px;
+        margin-right: -3px;
+        vertical-align: middle;
+    }
+
+    span {
+        color: #858585;
+        font-size: 12.4px;
+        position: relative;
+        top: -1px;
+    }     
+}
+
+#trevorBox {
+   font-size: 14px;
+   color: #686868;
+   padding-top: 24px;
+   line-height: 18px;
+
+   a {
+       margin-right: 5px;
+       color: #999;
+   }    
+}
+
+#copyright {
+    background-color: lightseagreen;
+    margin-top: 4px;
+}
+
+#middleColumn {
+   padding: 0px 55px;
+}
+
+.m-mrg {
+   margin-bottom: 28px;
+   background-color: lightseagreen;
+}
+
+#profileNav {
+    position: relative;
+    font-size: 13px;
+    color: #919191;
+    text-align: center;
+    padding: 13px 20px;
+    margin-top: -64px;
+    background-color: #fff;
+
+    box-shadow: 0px 3px 3px #ddd;
+    z-index: 3;
+}
+
+#profileNavText {
+    .td {
+         width: 16.6666667%;
+         cursor: pointer;
+    }
+
+    .td.active {
+         color: #ee6000;
+    }     
+
+    td.active span:after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: -13px;
+        height: 4px;
+        background-color: #ee6000;
+    }
+    
+    .td i {
+        display: block;
+        font-size: 24px;
+        margin-bottom: 5px;
+    }     
+
+    span {
+         position: relative;
+    }
+} 
+
+
+#profileIcon {
+    width: 1px;
+    color: #ccc;
+    cursor: pointer;
+    i {
+         margin-right: -4px;
+   }    
+}
+
+#writeChatBox {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 3px 3px #ddd;
+}
+
+#chatNav {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ececec;
+}
+
+#chatTabs {
+    width: auto;
+    color: #919191;
+
+    .td {
+        position: relative;
+        width: 1px;
+        padding: 0px 15px;
+        white-space: pre;
+        cursor: pointer;
+         span {
+              position: relative;
+              top: 1px;
+              font-size: 15px;
+         }
+         i {
+             font-size: 21px;
+             margin-right: 4px;
+             vertical-align: middle;
+         }
+    }
+
+    .td:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        width: 1px;
+        height: 12px;
+        margin-top: -6px;
+        background-color: #eaeaea;
+    }
+
+    .td:first-child {
+        padding-left: 0px;
+    }
+
+    .td:last-child {
+        padding-right: 0;
+    }
+
+    .td:last-child:after {
+        display: none;
+    }
+
+    .td.active {
+        color: #373737;
+    }
+
+    .td.active span:after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: -20px;
+        width: 10px;
+        height: 10px;
+        border: 1px solid transparent;
+        border-color: transparent #ececec #ececec transparent;
+        margin: 0 auto;
+        background-color: #fff;
+        transform: rotateZ(45deg);
+    }
+}
+
+#chatContentMain {
+    position: relative;
+    padding-top: 15px;
+    
+    input::placeholder {
+        color: #666;
+    }
+}
+
+#userPhotoIcon {
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+    img {
+       display: block;
+       width: 100%;
+    }
+}
+
+#chatInputBox {
+   padding-left: 20px;
+
+
+   input {
+       width: 100%;
+       font-size: 20px;
+       border: 0;
+       padding: 0;
+       margin: 0;
+   }
+}
+
+#insertEmoji {
+   position: absolute;
+   right: -2px;
+   bottom: -10px;
+   cursor: pointer;
+
+   i {
+       display: block;
+       color: #ccced6;
+       font-size: 21px;
+   }
+}
+
+.postedChat {
+   padding: 20px;
+   background-color: #fff;
+   box-shadow: 0px 3px 3px #ddd;
+}
+
+.postersPic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+         display: block;
+         width: 100%;
+    }
+}
+
+.postersHeader {
+   vertical-align: top;
+   padding-left: 20px;
+}
+
+.posterToUser {
+    color: #5a5959;
+    font-size: 15px;
+    margin-bottom: 7px;
+    a {
+         color: #4267b2;
+    }
+}
+
+.postDate {
+   color: #a8a8a8;
+   font-size: 13px;
+
+   i {
+       font-size: 14px;
+       margin-right: 3px;
+   }
+
+   span {
+       position: relative;
+       top: -3px;
+   }
+}
+
+.posterOptions {
+   position: relative;
+   right: -3px;
+   width: 1px;
+   color: #ccc;
+   cursor: pointer;
+   vertical-align: top;
+}
+
+.posterContentImage {
+    display: block;
+    margin: 20px -20px;
+    cursor: pointer;
+}
+
+.posterActionContainer {
+    overflow: hidden;
+}
+
+.posterActions {
+    width: 24px;
+    height: 24px;
+    color: #a3a6aa;
+    cursor: pointer;
+    
+    span {
+         position: relative;
+         top: 1px;
+         width: 20px;
+         font-size: 15px;
+         color: #a3a6aa;
+    }
+    
+    i {
+         vertical-align: middle;
+    }
+}
+
+.postLike {
+    margin-right: 35px;
+}
+
+.postLike, .postComment {
+    width: 50px;
+    float: left;
+}
+
+.postLike i, .postComment i {
+    margin-right: 6px;
+}
+
+.postShare {
+    float: right;
+    transform: rotateY(180deg);
+    margin-right: -1px;
+}
+
+#refresh {
+   text-align: center;
+   padding: 40px 0px;
+
+   i {
+       color: #4267b2;
+       font-size: 32px;
+       display: block;
+   }
+}
+
+#rightColumn {
+   position: relative;
+   width: 150px;
+}
+
+#onlineUsers {
+    position: absolute;
+    top: -55px;
+    right: 55px;
+    bottom: 0px;
+    left:0px;
+}
+
+#contactHeader {
+    color: #3a5795;
+    font-size: 16px;
+    text-align: center;
+    margin: 23px 0px;
+
+    i {
+        font-size: 18px;
+        margin-right: 4px;
+        vertical-align: middle;
+    }
+
+    span {
+        position: relative;
+        top: 2px;
+    }
+}
+
+.contactsUserPhotos {
+   position: relative;
+   width: 50px;
+   height: 50px;
+   margin: 28px auto 0 auto;
+   border-radius: 50%;
+
+   img {
+       border-radius: 50%;
+   }
+}
+
+.contactsUserPhotos.active:after {
+   content: '';
+   position: absolute;
+   top: 3px;
+   right: 2px;
+   width: 10px;
+   height: 10px;
+   background-color: chartreuse;
+   border-radius: 50%;
+   box-shadow: 0px 0px 0px 3px #e9ebee;
+   z-index: 1;
+}
+
+#contacts .contactsUserPhotos:first-child {
+   margin-top: 0px;
+}
+
+
+#contactSettings {
+   margin-top: 55px;
+
+   i {
+       color: #3a5795;
+       padding: 13px;
+       background-color: #d8e4ff;
+       border-radius: 50%;
+       cursor: pointer;
+   }
+}
+
+
+
+
+    // background-color: burlywood;
+    // border: 3px solid red;
