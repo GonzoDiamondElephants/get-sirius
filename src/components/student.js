@@ -11,7 +11,7 @@ const HogwartStudent = (props) => {
     getStudent();
   }, [getStudent]);
 
-  console.log('we are in student .js', student);
+  // console.log('we are in student .js', student);
 
   const { isAuthenticated } = useAuth0();
 
