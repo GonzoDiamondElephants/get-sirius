@@ -7,10 +7,10 @@ const LoginButton = () => {
   useEffect(() => {
     if (!user) return;
     const checker = async () => {
-      let currentStudent = Axios.get(`/student/${user.sub}`);
+      let currentStudent = Axios.get(`/api/vi/student/${user.sub}`);
       console.log('we are inside currentStudent', currentStudent);
       if (currentStudent) {
-        Axios.post('/student', user)
+        Axios.post('/api/vi/student', user)
           .then((response) => {
             return response.data.name;
           })
