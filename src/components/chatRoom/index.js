@@ -3,28 +3,65 @@ import axios from 'axios';
 import Pusher from 'pusher-js';
 import ChatList from './chatlist';
 import ChatBox from './chatbox'
-import { withAuth0, useAuth0 } from '@auth0/auth0-react';
-
-
-
+// function Chat(props) {
+//   const [userName, setUserName] = useState('');
+//   const [text, setText] = useState('');
+//   const [message, setMessage] = useState([]);
+//   const [chats, setChats] = useState([]);
+//   const handleTextChange = useCallback((e) => {
+//     if (e.keyCode === 13) {
+//       const payload = {
+//         userName: userName,
+//         message: text
+//       };
+//       axios.post('http://localhost:5000/message', payload);
+//     } else {
+//       setText(e.target.value);
+//     }
+//   })
+//   useEffect(() => {
+//     const userName = window.prompt('Username: ', 'Anonymous');
+//     setUserName({ userName });
+//     const pusher = new Pusher('86f0c0ffd8f31ee6eeba', {
+//       cluster: 'us3',
+//       encrypted: true
+//     });
+//     const channel = pusher.subscribe('chat');
+//     //This is breaking here. this was channel.bind.this
+//     channel('message', data => {
+//       console.log('in the channel: ', data);
+//       setChats([...chats, data]);
+//     });
+//     handleTextChange();
+//   }, [handleTextChange])
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <h1 className="App-title">MUGGLES FOR LIFE</h1>
+//       </header>
+//       <section>
+//         <ChatList chats={message} />
+//         <ChatBox
+//           text={text}
+//           username={userName}
+//           handleTextChange={handleTextChange}
+//         />
+//       </section>
+//     </div>
+//   );
+// }
 class Chat extends Component {
-  
 constructor(props) {
   super(props);
   this.state = {
-    showBody: false,
     text: '',
     username: '',
     chats: []
   };
 }
 componentDidMount() {
-  const { user } = withAuth0();
-  if (user) this.setState({showBody: true});
-  console.log('inside componet did mount on chatroom index.js', this.state.username)
-  // this.whenAuthenticated()
-  // const username = window.prompt('Username: ', 'Anonymous');
-  // this.setState({ username: this.state.name });
+  const username = window.prompt('Username: ', 'Anonymous');
+  this.setState({ username });
   const pusher = new Pusher('86f0c0ffd8f31ee6eeba', {
     cluster: 'us3',
     encrypted: true
@@ -35,14 +72,6 @@ componentDidMount() {
   });
   this.handleTextChange = this.handleTextChange.bind(this);
 }
-
-// whenAuthenticated(){
-//   console.log('inside whenAuthtcated in chatroom indexed.js')
-//   const showBody = this.props.auth0;
-//   if(showBody) this.setState({showBody: true});
-//   console.log('inside whenAuthtcated in chatroom indexed.js secdon time', showBody)
-// }
-
 handleTextChange(e) {
   if (e.keyCode === 13) {
     const payload = {
@@ -54,13 +83,8 @@ handleTextChange(e) {
     this.setState({ text: e.target.value });
   }
 }
-
    render() {
-    //  console.log('inside render', this.state.username)
-    //  const { user } = this.props.auth0;
-    //  console.log('inside render of chatroom index.js this.props', this.props, 'this.state', this.state);
-        return(
-           this.state.showBody && 
+        return (
           <div className="App">
             <header className="App-header">
               <h1 className="App-title">MUGGLES FOR LIFE</h1>
@@ -77,5 +101,4 @@ handleTextChange(e) {
         );
       }
 }
-
 export default Chat;
