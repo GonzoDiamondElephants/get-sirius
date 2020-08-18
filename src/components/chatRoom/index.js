@@ -14,7 +14,7 @@ class Chat extends Component {
     };
   }
   componentDidMount() {
-    const username = window.prompt('Username: ', 'Anonymous');
+    const username = 'sian is amazing';
     this.setState({ username });
     const pusher = new Pusher('86f0c0ffd8f31ee6eeba', {
       cluster: 'us3',
@@ -22,7 +22,7 @@ class Chat extends Component {
     });
     const channel = pusher.subscribe('chat');
     channel.bind('message', (data) => {
-      this.setState({ chats: [...this.state.chats, data], test: '' });
+      this.setState({ chats: [...this.state.chats, data], text: '' });
     });
     this.handleTextChange = this.handleTextChange.bind(this);
   }
@@ -32,11 +32,12 @@ class Chat extends Component {
         username: this.state.username,
         message: this.state.text,
       };
-      axios.post('http://localhost:5000/message', payload);
+      axios.post('https://gitschooledalexaapp.herokuapp.com/message', payload);
     } else {
       this.setState({ text: e.target.value });
     }
   }
+
   render() {
     return (
       <div className='App'>
@@ -45,6 +46,7 @@ class Chat extends Component {
         </header>
         <section>
           <ChatList chats={this.state.chats} />
+
           <ChatBox
             text={this.state.text}
             username={this.state.username}
@@ -55,4 +57,5 @@ class Chat extends Component {
     );
   }
 }
+
 export default Chat;

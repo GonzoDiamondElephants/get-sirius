@@ -1,5 +1,6 @@
 const initState = {
   allStudent: [],
+  currentUser: {},
 };
 
 const reducer = (state = initState, action) => {
@@ -12,6 +13,7 @@ const reducer = (state = initState, action) => {
       return state.allStudent;
     case 'ADD_USER':
       return payload;
+
     default:
       break;
   }
