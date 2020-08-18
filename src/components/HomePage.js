@@ -7,36 +7,26 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function HomePage() {
   const [currentUser, setCurrentUser] = useState({});
+  console.log('current', currentUser);
   const { isAuthenticated, user } = useAuth0();
   useEffect(() => {
-    if (!user) return;
-    Axios.post(`${process.env.REACT_APP_API}/student`, user)
-      .then((response) => {
-        return response.data;
-      })
-      .catch((e) => {
-        console.error(e);
-      });
-
     const checker = async () => {
-      let currentStudent = await Axios.get(
-        `${process.env.REACT_APP_API}/student/sub/${user.sub}`
-      );
-
-      if (currentStudent) {
-        setCurrentUser(currentStudent.data);
+      if (user) {
+        let currentStudent = await Axios.get(
+          `${process.env.REACT_APP_API}/student/sub/${user.sub}`
+        );
+        if (currentStudent.data.length > 0) {
+          setCurrentUser(currentStudent.data[0]);
+        } else if (currentStudent.data.length === 0) {
+          let postUser = await Axios.post(
+            `${process.env.REACT_APP_API}/student`,
+            user
+          );
+          setCurrentUser(postUser.data);
+        }
       }
-      //else
-      //  if (currentStudent) {
-      //   Axios.post(`${process.env.REACT_APP_API}/student`)
-      //     .then((response) => {
-      //       return response.data;
-      //     })
-      //     .catch((e) => {
-      //       console.error(e);
-      //     });
-      // }
     };
+
     checker();
   }, [user]);
 

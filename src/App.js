@@ -7,14 +7,19 @@ import LogoutButton from './components/logoutButton.js';
 import {useAuth0} from '@auth0/auth0-react';
 import store from '../src/store/index.js';
 import {Provider} from 'react-redux';
+
 // import Student from './components/student.js';
 import HomePage from './components/HomePage.js';
 import "./styles/header.scss";
 import "./styles/bio.scss";
 import "./styles/mainContent.scss";
+
+
+
 function App() {
   // const {isLoading} = useAuth0();
   // if(isLoading) return(<div>Loading.......</div>)
+
   return (
     <>
     <Provider store={store}>

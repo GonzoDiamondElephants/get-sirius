@@ -15,10 +15,6 @@ import {
 } from '@material-ui/icons';
 function Header(props) {
   const { currentUser } = props;
-  let newUser = [];
-  for (let i = 0; i < currentUser.length; i++) {
-    newUser.push(currentUser[i].name);
-  }
   return (
     <header>
       <div className='tb'>
@@ -50,7 +46,7 @@ function Header(props) {
           </a>
         </div>
         <div className='td' id='firstAndLast'>
-          <span>Alohomora, {newUser}</span>
+          <span>Alohomora, {currentUser.name}</span>
         </div>
         <div className='td' id='i-links'>
           <div className='tb'>
