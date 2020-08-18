@@ -6,23 +6,31 @@ import Axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function HomePage() {
-  const [currentUser, setCurrentUser] = useState('');
-  console.log('in the state', currentUser);
+  const [currentUser, setCurrentUser] = useState({});
   const { isAuthenticated, user } = useAuth0();
   useEffect(() => {
     if (!user) return;
+    Axios.post(`${process.env.REACT_APP_API}/student`, user)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+
     const checker = async () => {
       let currentStudent = await Axios.get(
-        `${process.env.REACT_APP_API}/student/find/${user.sub}`
+        `${process.env.REACT_APP_API}/student/sub/${user.sub}`
       );
+
       if (currentStudent) {
-        setCurrentUser({ currentUser: currentStudent.data });
+        setCurrentUser(currentStudent.data);
       }
-      console.log('current user state inside home page ', currentUser);
-      // if (currentStudent) {
-      //   Axios.post(`${process.env.REACT_APP_API}/student`, user)
+      //else
+      //  if (currentStudent) {
+      //   Axios.post(`${process.env.REACT_APP_API}/student`)
       //     .then((response) => {
-      //       return response.data.name;
+      //       return response.data;
       //     })
       //     .catch((e) => {
       //       console.error(e);
@@ -30,14 +38,14 @@ function HomePage() {
       // }
     };
     checker();
-  }, [currentUser, user]);
+  }, [user]);
 
   return (
     isAuthenticated && (
       <div className='homePage'>
-        <Header />
+        <Header currentUser={currentUser} />
         <Bio />
-        <MainContent />
+        <MainContent currentUser={currentUser} />
       </div>
     )
   );
