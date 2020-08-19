@@ -12,9 +12,16 @@ class Chat extends Component {
       username: '',
       chats: [],
     };
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return { username: nextProps.currentUser.name };
   }
 
   componentDidMount() {
+    console.log('this props from index', this.props);
     const username = 'sian is amazing';
     this.setState({ username });
     const pusher = new Pusher('86f0c0ffd8f31ee6eeba', {
@@ -23,20 +30,19 @@ class Chat extends Component {
     });
     const channel = pusher.subscribe('chat');
     channel.bind('message', (data) => {
-      this.setState({ chats: [...this.state.chats, data], text: '' });
+      this.setState({ chats: [...this.state.chats, data] });
     });
-    this.handleTextChange = this.handleTextChange.bind(this);
   }
   handleTextChange(e) {
-    if (e.keyCode === 13) {
-      const payload = {
-        username: this.state.username,
-        message: this.state.text,
-      };
-      axios.post('https://gitschooledalexaapp.herokuapp.com/message', payload);
-    } else {
-      this.setState({ text: e.target.value });
-    }
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit(e) {
+    const payload = {
+      username: this.state.username,
+      message: this.state.text,
+    };
+    axios.post('https://gitschooledalexaapp.herokuapp.com/message', payload);
   }
 
   render() {
@@ -52,6 +58,7 @@ class Chat extends Component {
             text={this.state.text}
             username={this.state.username}
             handleTextChange={this.handleTextChange}
+            handleSubmit={this.handleSubmit}
           />
         </section>
       </div>

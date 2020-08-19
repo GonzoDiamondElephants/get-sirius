@@ -3,6 +3,7 @@ import Chatroom from '../chatRoom';
 
 function MainContent(props) {
   const { currentUser } = props;
+  console.log('current from main page', props);
   return (
     <div id='mainContent'>
       <div className='tb'>
@@ -170,7 +171,7 @@ function MainContent(props) {
             </div>
           </div>
           <div>
-            <Chatroom />
+            <Chatroom currentUser={currentUser} />
             {/* <div className="postedChat">
               <div className="tb">
                 <a href="https://www.google.com/" className="td postersPic">
