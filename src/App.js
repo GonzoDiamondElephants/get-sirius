@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {setState, useState} from 'react';
 import LoginButton from './components/loginButton.js';
-import {useAuth0} from '@auth0/auth0-react';
+import Axios from 'axios';
 import store from '../src/store/index.js';
 import {Provider} from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -20,25 +20,49 @@ import "./styles/chatStyles.scss";
 import "./styles/gitSorted.scss";
 import "./styles/gringotts.scss";
 
+export const Context = React.createContext({currentUser: null, setCurrentUser: () => {}})
+
 function App() {
-  // const {isLoading} = useAuth0();
-  // if(isLoading) return(<div>Loading.......</div>)
+
+  const [currentUser, setCurrentUser] = useState({});
+  // console.log('current User in app.js', currentUser)
+
+  // const checker = async (user) => {
+  //   if(user){
+  //     let currentStudent = await Axios.get(
+  //       `${process.env.REACT_APP_API}/student/sub/${user.sub}`
+  //     );
+  //     if (currentStudent.data.length > 0) {
+  //       setCurrentUser(currentStudent.data[0]);
+  //     } else if (currentStudent.data.length === 0) {
+  //       let postUser = await Axios.post(
+  //         `${process.env.REACT_APP_API}/student`,
+  //         user
+  //       );
+  //       setCurrentUser(postUser.data);
+  //     }
+  //   }
+  // };
+
 
   return (
     <>
-    <Provider store={store}>
-    <BrowserRouter>
-    <Route exact path='/'>
-      <LoginButton />
-      <HomePage />      
-      </Route>
+      <Provider store={store}>
+      <Context.Provider value={{currentUser, setCurrentUser}}>
+        <BrowserRouter>
+          <Route exact path='/'>
+            <LoginButton />
+            <HomePage />      
+          </Route>
 
-
-      {/* <Route path='/hogwarts' component={HomePage} /> */}
-      <Route path='/gitSorted' component={GitSorted} />
-      <Route path='/gringotts' component={Gringotts} />
+      {/* <Route exact path='/gitSorted'>
+        <GitSorted currentUser={currentUser}/>
+      </Route> */}
+          <Route path='/gitSorted' component={GitSorted} />
+          <Route path='/gringotts' component={Gringotts} />
       {/* <Route path='/diagonAlley' component={DiagonAlley} /> */}
-      </BrowserRouter>
+        </BrowserRouter>
+      </Context.Provider>
       </Provider>
     </>
   );

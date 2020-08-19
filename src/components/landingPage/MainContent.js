@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Chatroom from '../chatRoom';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
@@ -19,9 +19,10 @@ Subject,
 Pets
 
 } from '@material-ui/icons';
+import { Context } from '../../App';
 
 function MainContent(props) {
-  const { currentUser } = props;
+  const { currentUser } = useContext(Context);
   const { user } = useAuth0();
   return (
     <div id='mainContent'>
