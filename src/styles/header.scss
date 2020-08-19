@@ -1,0 +1,168 @@
+*{
+    outline: none;
+  }
+  html { 
+    background-color: lightcoral;
+  }
+  
+  
+  body, input, button {
+      font-family: Helvetica;
+  }
+  
+  body {
+    margin: 0px;
+    background-color:#f1f1f1;
+  }
+  
+  img {
+      display: block;
+      width: 100%;
+      border: 0;
+  }
+  
+  .tb {
+      display: table;
+      width: 100%;
+  }
+  
+  .tr {
+      display: table-row;
+  }
+  
+  .td {
+      display: table-cell;
+      vertical-align: middle;
+  }
+  
+  a {
+      text-decoration: none;
+  }
+  
+  button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+  }
+  
+  main {
+      width: 1280px;
+      margin: 0 auto;
+      background-color: #e9ebee;
+      box-shadow: 0px 8px 30px #1d2d4f;
+      border-radius: 4px;
+      overflow: hidden;
+  } 
+  ::placeholder {
+      color: #505050;
+  }
+  
+  header {
+      padding: 7px 20px;
+      background: rgb(99,0,0);
+      background: linear-gradient(65deg, rgba(99,0,0,1) 27%, rgba(198,171,0,1) 100%);
+      border: .25px solid rgb(40, 40, 40);
+  }
+  
+  #logo {
+      width: 30px;
+      a {
+          display: block;
+          i {
+              font-size: 34px;
+              color: #fff;
+          }
+  
+      }
+  }
+  
+  #searchForm form {
+    position: relative;
+    width: 280px;
+    font-size: 16px;
+    padding: 8px 15px;
+    padding-right: 37px;
+    background-color: #f1f1f1;
+    border-radius: 1px;
+    margin-left: 15px;
+    border: 0.5px solid black;
+  
+    input {
+        width: 100%;
+        color: black;
+        border: 0;
+        background-color: transparent;
+    }
+  
+    button {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      color: #575757;
+      height: 22px;
+      line-height: 1;
+      cursor: pointer;
+        i {
+        font-size: 22px;
+      }
+    }
+  }
+  
+  
+  #firstAndLast {
+      width: 1px;
+      color: #fff;
+      font-weight: bold;
+      white-space: pre;
+      padding-right: 20px;
+  
+      span {
+      padding-right: 28px;
+      border-right: 1px solid #35518b;
+    }
+  }
+  
+  #p-link {
+    display: block;
+    width: 34px;
+    height: 34px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+        width: 100%;
+    }
+  }
+  
+  #i-links {
+    width: 1px;
+  
+    i {
+         color: #fff;
+         font-size: 24px;
+         padding: 0px 8px;
+         vertical-align: middle;
+    }
+  }
+  
+  #m-td {
+    padding-right: 20px;
+    
+     span {
+          position: relative;
+          cursor: pointer;
+     }
+  
+     span.m-active:before {
+          content: '5';
+          position: absolute;
+          top: -8px;
+          right: 0px;
+          color: #fff;
+          font-size: 12px;
+          padding: 4px 4px 3px 4px;
+          background-color: red;
+          border-radius: 3px;
+          line-height: 1;
+     }
+  }
