@@ -26,7 +26,6 @@ function HomePage() {
         }
       }
     };
-
     checker();
   }, [user]);
 
