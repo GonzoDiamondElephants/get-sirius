@@ -13,6 +13,7 @@ class Chat extends Component {
       chats: [],
     };
   }
+
   componentDidMount() {
     const username = 'sian is amazing';
     this.setState({ username });
