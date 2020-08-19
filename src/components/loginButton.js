@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 // import Axios from 'axios';
 
 const LoginButton = () => {
+
   // const [currentUser, setCurrentUser] = useState('');
   const { loginWithRedirect, isAuthenticated } = useAuth0();
   // useEffect(() => {
@@ -27,6 +28,7 @@ const LoginButton = () => {
   //   };
   //   checker();
   // });
+
   return (
     !isAuthenticated && (
       <div>
