@@ -135,7 +135,7 @@ function MainContent(props) {
                     <span>CHAT</span> 
                   </div>
                   <div className='td'>
-                  <Link to='/gitSorted'>
+                  <Link to='/gitSorted' target='_blank'>
                     <div className="spacer">
                   <House
                     className='material-icons'
@@ -146,7 +146,7 @@ function MainContent(props) {
                     </Link>
                   </div>
                   <div className='td'>
-                    <Link to='/gringotts'>
+                    <Link to='/gringotts' target='_blank'>
                   <div className="spacer">
 
                   <MonetizationOn
@@ -229,7 +229,7 @@ function MainContent(props) {
                 <div className='td' id='chatInputBox'>
                   {/* <input type='text' placeholder="What's on your mind?" /> */}
 
-                  <Chatroom />
+                  <Chatroom currentUser={currentUser} />
                 </div>
               </div>
               {/* <div id='insertEmoji'> */}
