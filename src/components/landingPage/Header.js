@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 // import materialIcons from "material-icons";
 import {
@@ -14,6 +15,7 @@ import {
   CameraAlt,
 } from '@material-ui/icons';
 function Header(props) {
+  const { user } = useAuth0();
   const { currentUser } = props;
   return (
     <header>
@@ -39,10 +41,7 @@ function Header(props) {
         </div>
         <div className='td'>
           <a href='https://www.google.com/' id='p-link'>
-            <img
-              src='https://pyxis.nymag.com/v1/imgs/171/429/c95b07becc2bef532d9669b4824ea4386f-08-harry-potter.rsquare.w1200.jpg'
-              alt=''
-            />
+            <img src={user.picture} alt={user.name} />
           </a>
         </div>
         <div className='td' id='firstAndLast'>

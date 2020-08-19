@@ -1,30 +1,31 @@
-import React from "react";
-import CameraAlt from "@material-ui/icons/CameraAlt";
+import React from 'react';
+import CameraAlt from '@material-ui/icons/CameraAlt';
+import { useAuth0 } from '@auth0/auth0-react';
 
-function Bio() {
+function Bio(props) {
+  const { currentUser } = props;
+  const { user } = useAuth0();
+
   return (
-    <div className="bioWrapper">
-      <div id="headerContainer">
-        <div id="bannerImage">
+    <div className='bioWrapper'>
+      <div id='headerContainer'>
+        <div id='bannerImage'>
           <img
-            src="https://opinionstage-res.cloudinary.com/image/upload/c_lfill,dpr_3.0,f_auto,fl_lossy,q_auto:good,w_400/v1/polls/bsevnhsp9oc6xmbppl5v"
-            alt=""
+            src='https://opinionstage-res.cloudinary.com/image/upload/c_lfill,dpr_3.0,f_auto,fl_lossy,q_auto:good,w_400/v1/polls/bsevnhsp9oc6xmbppl5v'
+            alt=''
           />
         </div>
-        <div id="userInformation">
-          <div id="userProfilePic">
-            <img
-              src="https://pyxis.nymag.com/v1/imgs/171/429/c95b07becc2bef532d9669b4824ea4386f-08-harry-potter.rsquare.w1200.jpg"
-              alt=""
-            />
+        <div id='userInformation'>
+          <div id='userProfilePic'>
+            <img src={user.picture} alt={user.name} />
           </div>
-          <div id="userName">INSERT NAME</div>
+          <div id='userName'>{currentUser.name}</div>
 
-          <div id="editProfile">
-            <CameraAlt color="disabled" />
+          <div id='editProfile'>
+            <CameraAlt color='disabled' />
           </div>
         </div>
-        <div id="profileGrid"></div>
+        <div id='profileGrid'></div>
       </div>
     </div>
   );

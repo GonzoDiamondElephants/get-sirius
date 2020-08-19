@@ -9,6 +9,7 @@ function HomePage() {
   const [currentUser, setCurrentUser] = useState({});
   console.log('current', currentUser);
   const { isAuthenticated, user } = useAuth0();
+
   useEffect(() => {
     const checker = async () => {
       if (user) {
@@ -33,7 +34,7 @@ function HomePage() {
     isAuthenticated && (
       <div className='homePage'>
         <Header currentUser={currentUser} />
-        <Bio />
+        <Bio currentUser={currentUser} />
         <MainContent currentUser={currentUser} />
       </div>
     )
