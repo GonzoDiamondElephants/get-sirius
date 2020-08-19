@@ -15,7 +15,7 @@ class Chat extends Component {
   }
 
   componentDidMount() {
-    const username = 'sian is amazing';
+    const username = 'USERNAME';
     this.setState({ username });
     const pusher = new Pusher('86f0c0ffd8f31ee6eeba', {
       cluster: 'us3',
@@ -42,18 +42,18 @@ class Chat extends Component {
   render() {
     return (
       <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>MUGGLES FOR LIFE</h1>
-        </header>
+          <p className="chatHead">What's on your mind?</p>
+        <div className="chatContainer">
         <section>
-          <ChatList chats={this.state.chats} />
 
           <ChatBox
             text={this.state.text}
             username={this.state.username}
             handleTextChange={this.handleTextChange}
           />
+          <ChatList chats={this.state.chats} />
         </section>
+        </div>
       </div>
     );
   }

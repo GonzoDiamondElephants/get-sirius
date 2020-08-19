@@ -1,5 +1,4 @@
 import React from 'react';
-import CameraAlt from '@material-ui/icons/CameraAlt';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function Bio(props) {
@@ -20,10 +19,6 @@ function Bio(props) {
             <img src={user.picture} alt={user.name} />
           </div>
           <div id='userName'>{currentUser.name}</div>
-
-          <div id='editProfile'>
-            <CameraAlt color='disabled' />
-          </div>
         </div>
         <div id='profileGrid'></div>
       </div>
