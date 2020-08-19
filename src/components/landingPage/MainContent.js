@@ -1,8 +1,11 @@
 import React from 'react';
 import Chatroom from '../chatRoom';
+import { Link } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function MainContent(props) {
   const { currentUser } = props;
+  const { user } = useAuth0();
   return (
     <div id='mainContent'>
       <div className='tb'>
@@ -115,8 +118,10 @@ function MainContent(props) {
                     <span>HOGSMEDE</span>
                   </div>
                   <div className='td'>
+                  <Link to='/gitToClass'>
                     <i className='material-icons'>flash_on</i>
                     <span>CLASSES</span>
+                  </Link>
                   </div>
                   <div className='td'>
                     <i className='material-icons'>attach_money</i>
@@ -144,19 +149,22 @@ function MainContent(props) {
                   <i className='material-icons'>videocam</i>
                   <span>Live Video</span>
                 </div>
+                <Link to='/gitSorted'>
                 <div className='td'>
                   <i className='material-icons'>event</i>
                   <span>Life Event</span>
                 </div>
+                  </Link>
               </div>
             </div>
             <div id='chatContentMain'>
               <div className='tb'>
                 <div className='td' id='userPhotoIcon'>
-                  <img
+                <img src={user.picture} alt={user.name} />
+                  {/* <img
                     src='https://pyxis.nymag.com/v1/imgs/171/429/c95b07becc2bef532d9669b4824ea4386f-08-harry-potter.rsquare.w1200.jpg'
                     alt=''
-                  />
+                  /> */}
                 </div>
                 <div className='td' id='chatInputBox'>
                   <input type='text' placeholder="What's on your mind?" />
