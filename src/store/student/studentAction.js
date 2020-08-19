@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 export const getUser = () => async (dispatch) => {
-  let result = await axios.get('/student');
-  console.log('result', result.data);
+  let result = await axios.get(`${process.env.REACT_APP_API}/api/vi/student`);
 
   const getAllUsers = (payload) => {
     return {
