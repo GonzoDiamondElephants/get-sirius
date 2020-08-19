@@ -2,6 +2,9 @@ import React from "react";
 import HomeButton from "./homeButton.js"
 
 function Gringotts(props) {
+  // We need to pull in CurrentUser's gringCoin balance and insert it into line 22. This balance needs to be updated in a useEffect hook with the currentUser as a dependency. 
+
+
   return (
     <div className="bank">
         

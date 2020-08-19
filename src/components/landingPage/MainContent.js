@@ -157,6 +157,7 @@ function MainContent(props) {
                     </Link>
                   </div>
                   <div className='td'>
+                    {/* WE NEED TO FIGURE OUT HOW TO MAKE AN API CALL HERE to do a patch call with axios: use the _id of the curentUser state and add 7 to the gringcoin balance. We SHOULD be able to update state and THEN make the patch call to update the db  */}
                   <a href="https://stupefied-pasteur-d48e4c.netlify.app/" rel="noopener noreferrer" target="_blank">
                   <div className="spacer">
                   <FlashOn

@@ -46,6 +46,7 @@ const GitSorted = (props) => {
     e.preventDefault();
     let houseVal = parseInt(faveClass) + parseInt(companionAnimal) + parseInt(wandType) + parseInt(gift) + parseInt(book);
     houseVal =  Math.round(houseVal / 5)
+    // As soon we have the state of the currentUser over in this component, we need to update the state of the Current User with the sorted house, then do another axios patch call and update the house, friends, foes, and add another 15 coin to the gring coin balance. 
     setHouseVal(houseVal);
   }
   return (
