@@ -33,4 +33,3 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(Categories);
 
-//add to cart= when dispatched, finds the product, decrement the stock, needs to show when OUT OF STOCK, incriment cart by one

@@ -18,7 +18,6 @@ class Chat extends Component {
     return { username: nextProps.currentUser.name };
   }
   componentDidMount() {
-    console.log('this props from index', this.props);
     const username = 'sian is amazing';
     this.setState({ username });
     const pusher = new Pusher('86f0c0ffd8f31ee6eeba', {

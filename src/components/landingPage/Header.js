@@ -4,7 +4,6 @@ import LogoutButton from "../logoutButton.js"
 import { Link } from 'react-router-dom';
 import { Context } from '../../App.js';
 
-// import materialIcons from "material-icons";
 import {
   Search
 } from '@material-ui/icons';
@@ -12,7 +11,7 @@ function Header(props) {
   const { user } = useAuth0();
   const { currentUser } = useContext(Context);
   return (
-    <header className="Slytherin">
+    <header className = "">
       <div className='tb'>
         <div className='td' id='logo'>
           <a href="https://admiring-euclid-bff953.netlify.app/" rel="noopener noreferrer" target="_blank">     

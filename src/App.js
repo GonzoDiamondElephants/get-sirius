@@ -5,8 +5,8 @@ import store from '../src/store/index.js';
 import {Provider} from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-
-import GitSorted from "./components/gitSorted.js"
+import Patronus from './components/patronus.js';
+import GitSorted from './components/gitSorted.js';
 import HomePage from './components/HomePage.js';
 import Gringotts from './components/gringotts.js';
 import DiagonAlley from './components/diagonAlley.js';
@@ -36,7 +36,8 @@ function App() {
           </Route>
           <Route path='/gitSorted' component={GitSorted} />
           <Route path='/gringotts' component={Gringotts} />
-      <Route path='/diagonAlley' component={DiagonAlley} />
+          <Route path='/diagonAlley' component={DiagonAlley} />
+          <Route path='/patronus' component={Patronus} />
         </BrowserRouter>
       </Context.Provider>
       </Provider>
