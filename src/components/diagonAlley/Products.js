@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
+import DiagonModal from "../modals/diagonModal.js";
 
 function Products(props) {
   let productsHTML = [];
@@ -23,9 +24,10 @@ function Products(props) {
           <p className="prodStock">
             Quantity in Stock: {props.products[i].stock}
           </p>
-          <Button id="owlPost" variant="contained"  disableElevation>
+          {/* <Button id="owlPost" variant="contained"  disableElevation>
             DELIVER VIA OWL POST
-          </Button>
+          </Button> */}
+          <DiagonModal />
         </div>
       );
     }
@@ -33,7 +35,6 @@ function Products(props) {
 
   return (
     <>
-
       {productsHTML}
     </>
   );
