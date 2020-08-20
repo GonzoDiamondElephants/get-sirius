@@ -1,36 +1,39 @@
-import React from 'react';
+import React, {setState, useState} from 'react';
 import LoginButton from './components/loginButton.js';
-import LogoutButton from './components/logoutButton.js';
- import UsersHistory from './components/useHistory.js';
-// import TestBackEnd from './components/testBackEnd.js';
-// import ChatRoom from './components/chatRoom'
-import {useAuth0} from '@auth0/auth0-react';
+import Axios from 'axios';
 import store from '../src/store/index.js';
 import {Provider} from 'react-redux';
-
-// import Student from './components/student.js';
+import { BrowserRouter, Route } from 'react-router-dom';
+// import Presentation from "./components/Presentation.js"
+import GitSorted from "./components/gitSorted.js"
 import HomePage from './components/HomePage.js';
+import Gringotts from './components/gringotts.js';
 import "./styles/header.scss";
 import "./styles/bio.scss";
 import "./styles/mainContent.scss";
+// import "./styles/loginPage.scss";
+import "./styles/chatStyles.scss";
+import "./styles/gitSorted.scss";
+import "./styles/gringotts.scss";
 
-
+export const Context = React.createContext({currentUser: null, setCurrentUser: () => {}})
 
 function App() {
-  // const {isLoading} = useAuth0();
-  // if(isLoading) return(<div>Loading.......</div>)
-
+  const [currentUser, setCurrentUser] = useState({});
   return (
     <>
-    <Provider store={store}>
-      <h1>Home Page</h1>
-      <LoginButton />
-      <LogoutButton />
-       {/* <Student/> */}
-      <UsersHistory/>
-      {/* <TestBackEnd/>
-      <ChatRoom /> */}
-      <HomePage />  
+      <Provider store={store}>
+      <Context.Provider value={{currentUser, setCurrentUser}}>
+        <BrowserRouter>
+          <Route exact path='/'>
+            <LoginButton />
+            <HomePage />      
+          </Route>
+          <Route path='/gitSorted' component={GitSorted} />
+          <Route path='/gringotts' component={Gringotts} />
+      {/* <Route path='/diagonAlley' component={DiagonAlley} /> */}
+        </BrowserRouter>
+      </Context.Provider>
       </Provider>
     </>
   );

@@ -1,9 +1,9 @@
-import React from 'react';
-import CameraAlt from '@material-ui/icons/CameraAlt';
+import React, {useContext} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { Context } from '../../App.js';
 
 function Bio(props) {
-  const { currentUser } = props;
+  const { currentUser } = useContext(Context);
   const { user } = useAuth0();
 
   return (
@@ -20,10 +20,6 @@ function Bio(props) {
             <img src={user.picture} alt={user.name} />
           </div>
           <div id='userName'>{currentUser.name}</div>
-
-          <div id='editProfile'>
-            <CameraAlt color='disabled' />
-          </div>
         </div>
         <div id='profileGrid'></div>
       </div>

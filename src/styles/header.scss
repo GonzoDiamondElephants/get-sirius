@@ -1,9 +1,9 @@
 *{
     outline: none;
   }
-  html { 
-    background-color: lightcoral;
-  }
+  // html { 
+  //   // background-color: lightcoral;
+  // }
   
   
   body, input, button {
@@ -47,6 +47,7 @@
   
   main {
       width: 1280px;
+      min-width: 1000;
       margin: 0 auto;
       background-color: #e9ebee;
       box-shadow: 0px 8px 30px #1d2d4f;
@@ -62,7 +63,36 @@
       background: rgb(99,0,0);
       background: linear-gradient(65deg, rgba(99,0,0,1) 27%, rgba(198,171,0,1) 100%);
       border: .25px solid rgb(40, 40, 40);
+      min-width: 800px;
   }
+  header.slytherin {
+    padding: 7px 20px;
+    background: rgb(30,99,0);
+    background: linear-gradient(65deg, rgba(30,99,0,1) 27%, rgba(0,0,0,1) 100%);
+    border: .25px solid rgb(40, 40, 40);
+    min-width: 860px;
+}
+header.gryffindor {
+  padding: 7px 20px;
+  background: rgb(99,0,0);
+  background: linear-gradient(65deg, rgba(99,0,0,1) 27%, rgba(198,171,0,1) 100%);
+  border: .25px solid rgb(40, 40, 40);
+  min-width: 860px;
+}
+header.hufflepuff {
+  padding: 7px 20px;
+  background: rgb(83,58,16);
+  background: linear-gradient(65deg, rgba(83,58,16,1) 27%, rgba(42,64,143,1) 100%);
+  border: .25px solid rgb(40, 40, 40);
+  min-width: 860px;
+}
+header.ravenclaw {
+  padding: 7px 20px;
+  background: rgb(99,0,0);
+  background: linear-gradient(65deg, rgba(99,0,0,1) 27%, rgba(198,171,0,1) 100%);
+  border: .25px solid rgb(40, 40, 40);
+  min-width: 860px;
+}
   
   #logo {
       width: 30px;

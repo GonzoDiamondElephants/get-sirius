@@ -1,5 +1,4 @@
 import React from "react";
-
     export default ({ chats }) => (
       <ul>
         {chats.map(chat => {
@@ -7,7 +6,6 @@ import React from "react";
             <div>
               <div className="row show-grid">
                 <div className="col-xs-12">
-
                   <div className="chatMessage">
                     <div key={chat.id} className="box">
                       <p>
@@ -15,8 +13,6 @@ import React from "react";
                       </p>
                       <p>{chat.message}</p>
                     </div>
-                    
-               
                   </div>
                 </div>
               </div>
