@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { Context } from '../../App.js';
 
 function Bio(props) {
-  const { currentUser } = props;
+  const { currentUser } = useContext(Context);
   const { user } = useAuth0();
 
   return (

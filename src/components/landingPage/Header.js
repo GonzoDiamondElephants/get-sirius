@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import LogoutButton from "../logoutButton.js"
 import { Link } from 'react-router-dom';
+import { Context } from '../../App.js';
 
 // import materialIcons from "material-icons";
 import {
@@ -9,7 +10,7 @@ import {
 } from '@material-ui/icons';
 function Header(props) {
   const { user } = useAuth0();
-  const { currentUser } = props;
+  const { currentUser } = useContext(Context);
   return (
     <header>
       <div className='tb'>

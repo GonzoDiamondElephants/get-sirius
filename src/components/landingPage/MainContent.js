@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Chatroom from '../chatRoom';
+import { Context } from '../../App.js';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import {
@@ -8,20 +9,11 @@ LocationOn,
 MonetizationOn,
 FlashOn,
 Redeem,
-People,
-AvTimer,
-Search,
-Notifications,
-PersonAdd,
-CameraAlt,
 ChatBubble,
-Subject,
-Pets
-
 } from '@material-ui/icons';
 
 function MainContent(props) {
-  const { currentUser } = props;
+  const { currentUser } = useContext(Context);
   const { user } = useAuth0();
   return (
     <div id='mainContent'>
@@ -229,7 +221,7 @@ function MainContent(props) {
                 <div className='td' id='chatInputBox'>
                   {/* <input type='text' placeholder="What's on your mind?" /> */}
 
-                  <Chatroom />
+                  <Chatroom currentUser={currentUser} />
                 </div>
               </div>
               {/* <div id='insertEmoji'> */}
