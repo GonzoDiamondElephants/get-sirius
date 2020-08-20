@@ -46,8 +46,8 @@ const initState = {
     {
       name: "The Invisible Book of Invisibility",
       description: "An essential read for anyone intrigued by invisibility",
-      stock: 1000000000000,
-      price: Math.floor(Math.random() * 10000) + 1,
+      stock: Math.floor(Math.random() * 10000) + 100,
+      price: 1000000000000,
       category: "Flourish and Blotts",
       imgURL: "https://www.dia.org/sites/default/files/No_Img_Avail.jpg"
     },
