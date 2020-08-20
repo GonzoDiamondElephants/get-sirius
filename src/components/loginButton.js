@@ -10,7 +10,7 @@ const LoginButton = () => {
       <div>
         <section className="loginSection">
           <div className="loginContainer">
-            <h1 id="useThis">Welcome Muggle</h1>
+            <h4 id="useThis">Welcome Muggle</h4>
             <button class="glow" type="submit" value="Submit" id="myButton" 
                 onClick={() => {
                   loginWithRedirect();
