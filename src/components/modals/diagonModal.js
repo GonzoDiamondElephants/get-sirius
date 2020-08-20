@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { Button } from "@material-ui/core";
 import { Link } from 'react-router-dom';
+import {Context} from '../../App'
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -14,12 +16,28 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function DiagonModal() {
+export default function DiagonModal(props) {
+  const {currentUser} = useContext(Context);
+  const [balance, setBalance] = useState(0)
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
+
+  
+
+
+
+  const handleOpen = async () => {
     setOpen(true);
+
+    let balance =  await axios.get(`${process.env.REACT_APP_API}/student/id/${currentUser._id}`);
+
+    balance = balance.data.gringCoin;
+    balance = balance - Math.floor(Math.random() * 1000) + 1 ;
+    currentUser.gringCoin = balance;
+    axios.put(`${process.env.REACT_APP_API}/student/${currentUser._id}`, {gringCoin: balance});
+
+    setBalance(balance);
   };
 
   const handleClose = () => {
@@ -52,7 +70,7 @@ export default function DiagonModal() {
                 <img src="https://www.irishnews.com/picturesarchive/irishnews/irishnews/2019/01/29/140102630-18d5db6b-564e-4272-8506-0153bdabbd12.jpg" alt="Gringotts Goblin" />
             </div>
             <div id="houseName">Congratulations on your purchase!</div>
-                <div id="houseDesc">Your new gringCoin balance is AMOUNT</div>
+                <div id="houseDesc">Your new gringCoin balance is {balance}</div>
                 <Link to='/'>
                 <div id="goHome">Back to Howarts</div>
                 </Link>

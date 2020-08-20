@@ -1,11 +1,15 @@
 import React, {useContext, useState, useEffect} from 'react';
 import axios from 'axios';
 import { Context } from '../App';
+
+
 const Patronus = () => {
+
   const {currentUser} = useContext(Context);
   const [beast, setBeast] = useState('');
+  console.log('currentUser patronus', currentUser);
+  
   const getPatronus = async () => {
-    console.log('currentUser patronus', currentUser);
     let options = await axios.get('https://gde-patronus.herokuapp.com/');
     let randomNum = Math.floor(Math.random() * Math.floor(9));
     options = options.data[randomNum];

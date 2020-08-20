@@ -18,18 +18,24 @@ import {
 function MainContent(props) {
   const { currentUser } = useContext(Context);
 
+  console.log('***** INSIDE MAIN CONTENT ******', currentUser)
+
   const clickHandler = async () => {
     console.log('**************** inside click handler');
     let getStudent = await axios.get(
       `${process.env.REACT_APP_API}/student/id/${currentUser._id}`
     );
     console.log('getstudent from main content.js', getStudent);
-    let balance = getStudent.gringCoin;
+    let balance = getStudent.data.gringCoin;
     if (!balance) {
       balance = 0;
     }
     parseInt(balance);
-    balance += 20;
+    console.log('***** BALANCE IN MAINCONTENT', balance);
+    balance = balance + 20;
+    currentUser.gringCoin = currentUser.gringCoin +20;
+    console.log('***** BALANCE + 20 IN MAINCONTENT', balance);
+
     await axios.put(`${process.env.REACT_APP_API}/student/${currentUser._id}`, {
       gringCoin: balance,
     });
