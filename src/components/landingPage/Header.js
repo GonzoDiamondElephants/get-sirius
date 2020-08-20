@@ -12,7 +12,7 @@ function Header(props) {
   const { user } = useAuth0();
   const { currentUser } = useContext(Context);
   return (
-    <header>
+    <header className="Slytherin">
       <div className='tb'>
         <div className='td' id='logo'>
           <a href="https://admiring-euclid-bff953.netlify.app/" rel="noopener noreferrer" target="_blank">     
@@ -24,7 +24,7 @@ function Header(props) {
 
         </div>
         <div className='td' id='searchForm'>
-          <form method='get' action='https://www.google.com/search'>
+          <form method='get' action='https://www.google.com/search' target="_blank" rel="noopener noreferrer">
             <input
               type='text'
               placeholder='Search the Worldwide Wizarding Web'
@@ -35,7 +35,7 @@ function Header(props) {
           </form>
         </div>
         <div className='td'>
-          <a href='https://thumbs.gfycat.com/TanDishonestAfricanfisheagle-size_restricted.gif' id='p-link'>
+          <a href='https://thumbs.gfycat.com/TanDishonestAfricanfisheagle-size_restricted.gif' id='p-link' target="_blank" rel="noopener noreferrer">
             <img src={user.picture} alt={user.name} />
           </a>
         </div>

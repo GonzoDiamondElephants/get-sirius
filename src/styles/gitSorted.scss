@@ -34,29 +34,31 @@
     letter-spacing: 1px;
   }
 
-  #formWrapper > form > button, select{
-    font-family: 'Jolly Lodger';
-    font-size: 22px;
-    letter-spacing: 1px;
+  #buttonWrapper{
     padding:0px 6px;
     background-color: rgba(0,0,0,0.4);
     border: 1px solid white;
     color: #fff;
     width: 40%;
-  }
-
-  #formWrapper > form > button[type="submit"]{
-    width: 50%;
     display: block;
-    margin:0px auto;
-    font-size: 44px;
-    text-decoration: none;
     text-align: center;
-    height: auto;
+    margin:0px auto;
     background-color: rgba(139, 42, 0, 0.66);
+}
+
+
+
+#expectoApplyo{ 
+    text-decoration: none;
+    height: auto;
+    font-family: 'Jolly Lodger';
+    font-size: 44px;
+    min-width: 100px;
+    letter-spacing: 1px;
+    padding: 7px 0;
   }
 
-  #formWrapper > form > button[type="submit"]:hover{
+  #buttonWrapper:hover, #goHome:hover{
     background-color: rgb(147, 48, 5);
   }
 
@@ -73,3 +75,72 @@
     font-size: 50px;
     margin-bottom: -20px;
   }
+
+  .houseContain {
+      width: 700px;
+      height: 500px;
+      background-color: rgba(0, 0, 0, 0.646);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      overflow-y: scroll;
+      border: 2px solid black;
+      -ms-overflow-style: none;
+      scrollbar-width: none; 
+  }
+
+  .houseContain::-webkit-scrollbar {
+    display: none;
+}
+
+  .houseLogo img {
+      width: 350px;
+      height: auto;
+      margin: 10px 0;
+  }
+
+  #houseName {
+      font-size: 60px;
+      color: whitesmoke;
+      font-family: 'Jolly Lodger';
+      padding: 10px 0 ;
+      text-shadow:
+      2px 2px 0  rgb(25, 24, 26),
+      -2px -2px 0  rgb(25, 24, 26),
+      2px -2px 0  rgb(25, 24, 26),
+      -2px 2px 0  rgb(25, 24, 26),
+      0px 2px 0  rgb(25, 24, 26), 
+      2px 0px 0  rgb(25, 24, 26),
+      0px -2px 0  rgb(25, 24, 26),
+      -2px 0px 0  rgb(25, 24, 26),
+       2px 2px 10px  rgb(25, 24, 26);
+  }
+
+  #houseDesc{ 
+      font-family: Helvetica;
+      color: whitesmoke;
+      font-size: 30px;
+    
+  }
+
+#goHome {
+    text-align: center;
+    width: 350px;
+    padding: 10px 0px;
+    font-size: 30px;
+    color: whitesmoke;
+    font-family: 'Jolly Lodger';
+    margin: 20px 0px;
+    text-shadow:
+    2px 2px 0  rgb(25, 24, 26),
+    -2px -2px 0  rgb(25, 24, 26),
+    2px -2px 0  rgb(25, 24, 26),
+    -2px 2px 0  rgb(25, 24, 26),
+    0px 2px 0  rgb(25, 24, 26), 
+    2px 0px 0  rgb(25, 24, 26),
+    0px -2px 0  rgb(25, 24, 26),
+    -2px 0px 0  rgb(25, 24, 26),
+     2px 2px 10px  rgb(25, 24, 26);
+     background-color: rgba(139, 42, 0, 0.66);
+}
