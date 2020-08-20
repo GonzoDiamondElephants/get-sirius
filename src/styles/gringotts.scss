@@ -1,20 +1,3 @@
-// #bankBack {
-//     // background: url(https://vignette.wikia.nocookie.net/pottermore/images/b/b6/Gringotts_wizarding_bank.jpg/revision/latest?cb=20111005171002) no-repeat center
-//     //   center fixed;
-//     // background-size: cover;
-//     width: 100%;
-//     height: 100%;
-//     position: fixed;
-//     // opacity: .9;
-//     // margin-bottom: 600px;
-// }
-
-// #journalImg {
-//     width: auto;
-//     height: 50px;
-//     float: left;
-// }
-
 .grinContainer {
     width: 80%;
     min-width: 600px;
@@ -29,6 +12,10 @@
     color: whitesmoke;
     font-family: "Jolly Lodger", cursive;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     text-shadow: 2px 2px 0 rgb(25, 24, 26), -2px -2px 0 rgb(25, 24, 26),
       2px -2px 0 rgb(25, 24, 26), -2px 2px 0 rgb(25, 24, 26),
       0px 2px 0 rgb(25, 24, 26), 2px 0px 0 rgb(25, 24, 26),
@@ -39,6 +26,7 @@
   .text-block {
       margin-top: 50px;
       width: 80%;
+      min-width: 500px;
       margin-left: 10%;
       background-color: rgba(255, 255, 240, 0.317);
       display: flex;
@@ -51,14 +39,14 @@
   }
 
   #grinHead {
-      font-size: 100px;
+      font-size: 80px;
   }
 
   #grinText{
-    font-size: 75px;
+    font-size: 55px;
     margin-bottom: -40px;
   }
 
   #grinBalance {
-    font-size: 70px;
+    font-size: 50px;
   }

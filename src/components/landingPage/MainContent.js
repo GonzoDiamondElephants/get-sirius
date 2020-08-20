@@ -22,20 +22,20 @@ function MainContent(props) {
           <div className='leftComponentContainers'>
             <div className='leftSideHeaders'>
               <i className='leftColIcons' id='introIcon'></i>
-              <span>Location</span>
+              <span> Location</span>
               <div className='leftSideActionIcon'>
                 
               </div>
             </div>
             <div id='introBox'>
-              <div id='introLine'>Hogwarts</div>
+              <div id='introLine'> Hogwarts</div>
 
               <div id='userLocation'>
               <LocationOn
                     className='material-icons'
                     style={{ color: 'grey' }}
                   />
-                <a href='https://bit.ly/3aAJhgy'>
+                <a href='https://bit.ly/3aAJhgy' target="_blank" rel="noopener noreferrer">
                 54.939196,-3.929788
                 </a>
               </div>
@@ -44,7 +44,7 @@ function MainContent(props) {
           <div className='leftComponentContainers leftSpacing'>
             <div className='leftSideHeaders'>
               <i className='leftColIcons' id='photoIcon'></i>
-              <span>Hogwarts Students</span>
+              <span> Hogwarts Students</span>
             </div>
             <div id='photos'>
               <div className='tb'>
@@ -160,6 +160,7 @@ function MainContent(props) {
                   </a>
                   </div>
                   <div className='td'>
+                  <Link to='/diagonAlley'>
                   <div id="da" className="spacer">
                   <Redeem
                     className='material-icons'
@@ -167,6 +168,7 @@ function MainContent(props) {
                   />
                   </div>
                     <span className="textDec">DIAGON ALLEY</span>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, setState } from 'react';
 import HomeButton from './homeButton';
 import axios from 'axios';
-
+import AnimatedModal from './modals/sortedModal.js'
 
 const GitSorted = (props) => {
   const [houseVal, setHouseVal] = useState(0);
@@ -99,7 +99,21 @@ const GitSorted = (props) => {
             <option value="4">Tales of Beedle the Bard</option>
           </select>
         <br></br>
-        <button className="glow" type="submit" id="expectoApplyo">Expecto Applyo</button>
+
+
+
+{/*         
+        <button className="glow" type="submit" id="expectoApplyo">Expecto Applyo</button> */}
+        <AnimatedModal /> 
+
+        {/* NEED TO INSERT MODAL HERE */}
+
+
+
+
+
+
+
         </form>
       </div>
     </div>
