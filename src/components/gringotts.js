@@ -18,11 +18,6 @@ function Gringotts() {
     getTheBalance();
   }, [currentUser]);
 
-
-
-
-
-
   return (
     <div className='bank'>
       <div class='grinContainer'>

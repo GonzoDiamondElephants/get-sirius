@@ -4,7 +4,6 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { Link } from 'react-router-dom';
-
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -12,19 +11,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center"
   }
 }));
-
-export default function AnimatedModal() {
+export default function AnimatedModal(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const {wowHouse}=props;
+
 
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <div>
         <div id="buttonWrapper">
@@ -33,7 +31,6 @@ export default function AnimatedModal() {
         </button>      
         </div>
         </div>
-
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -49,10 +46,10 @@ export default function AnimatedModal() {
         <Fade in={open}>
         <div className="houseContain">
             <div className="houseLogo">
-                <img src="https://vignette.wikia.nocookie.net/harrypotter/images/b/b1/Gryffindor_ClearBG.png/revision/latest?cb=20190222162949" alt="Gryffindor" />
+                <img src={wowHouse.icon} alt={wowHouse.houseName}/>
             </div>
-            <div id="houseName">Gryffindor</div>
-                <div id="houseDesc">The Gryffindor house emphasizes the traits of courage as well as daring, nerve, and chivalry, and thus its members are generally regarded as brave, though sometimes to the point of recklessness.</div>
+      <div id="houseName">{wowHouse.houseName}</div>
+                <div id="houseDesc">{wowHouse.description}</div>
                 <Link to='/'>
                 <div id="goHome">Back to Howarts</div>
                 </Link>
@@ -62,3 +59,6 @@ export default function AnimatedModal() {
     </div>
   );
 }
+
+
+

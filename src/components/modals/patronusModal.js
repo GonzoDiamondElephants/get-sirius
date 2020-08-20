@@ -6,7 +6,7 @@ import Fade from "@material-ui/core/Fade";
 import axios from 'axios';
 import { Button } from "@material-ui/core";
 import { Context } from '../../App';
-
+import "../../styles/patronusModal.scss"
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -18,11 +18,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PatronusModal() {
   const { currentUser } = useContext(Context);
-
+  const [source, setSource] = useState('');
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [beast, setBeast] = useState('');
-
   const getPatronus = async () => {
     if (!currentUser.patronus) {
       let userDbPatronus = await axios.get(`${process.env.REACT_APP_API}/student/id/${currentUser._id}`);
@@ -35,8 +34,8 @@ export default function PatronusModal() {
         setBeast(options.patronus);
       } else { setBeast(userDbPatronus.data.patronus) }
     } else { setBeast(currentUser.patronus) }
+    setSource(`https://raw.githubusercontent.com/testOrg762/testPic/master/${beast}.png`)
   };
-
 
   useEffect(() => {
     getPatronus();
@@ -50,7 +49,6 @@ export default function PatronusModal() {
   const handleClose = () => {
     setOpen(false);
   };
-
 
   return (
 
@@ -75,10 +73,12 @@ export default function PatronusModal() {
       >
         <Fade in={open}>
           <div className="houseContain">
-            <div className="houseLogo">
-              <img src="LINK TO PATRONUS PIC" alt="{beast}" />
+            <div className="patronusPic">
+              <img src={source} alt="{beast}" i/>
             </div>
             <div id="houseName">{beast}</div>
+            <div id="houseDesc">A Patronus is an kind of Anti-Dementor – a guardian which acts as a shield between you and the Dementor.’ It’s also ‘a kind of positive force, a projection of the very things that the Dementor feeds upon – hope, happiness, the desire to survive – but it cannot feel despair, as real humans can, so the Dementors can’t hurt it.</div>
+             
           </div>
         </Fade>
       </Modal>

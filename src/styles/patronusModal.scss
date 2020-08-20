@@ -1,0 +1,25 @@
+.patronusPic {
+    width: 500px;
+    height: auto;
+    margin-top: 25px;
+
+}
+.patronusPic {
+    animation: amimalGlow 1.5s linear infinite alternate; 
+    width: 60%;
+    height: auto;
+    z-index:6;
+    margin-left: -5%;
+    
+    
+    }
+
+@keyframes amimalGlow{
+    to {
+    -webkit-filter: drop-shadow(15px 15px 0 dark blue)
+    drop-shadow(-15px -15px 0 blue);
+    filter: drop-shadow(15px 15px 0 white) 
+    drop-shadow(-15px -15px 0 white) brightness(0) invert(1);;
+    transform: unset;
+    }
+    } 

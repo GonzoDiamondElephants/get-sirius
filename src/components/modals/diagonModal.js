@@ -22,11 +22,6 @@ export default function DiagonModal(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-
-  
-
-
-
   const handleOpen = async () => {
     setOpen(true);
 

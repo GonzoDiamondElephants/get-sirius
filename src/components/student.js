@@ -7,15 +7,8 @@ const HogwartStudent = (props) => {
   useEffect(() => {
     getStudent();
   }, [getStudent]);
-  console.log('we are in student .js', student);
+
   const { isAuthenticated } = useAuth0();
-  // const storeUserInDatabase = async () => {
-  //   let result = await Axios.get(`/student/${user.sub}`)
-  //   console.log('in student.js getting user sub', result.data)
-  // };
-  // if (isAuthenticated) {
-  //   storeUserInDatabase();
-  // }
   let dumbledoresArmy = [];
   for (let i = 0; i < student.length; i++) {
     dumbledoresArmy.push(<div key={i}>{student[i].name}</div>);

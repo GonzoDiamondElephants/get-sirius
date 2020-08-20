@@ -2,7 +2,6 @@ import React, {useContext, useState} from "react";
 import { connect } from "react-redux";
 import axios from 'axios'
 import {Context} from '../../App'
-// import { Button } from "@material-ui/core";
 import DiagonModal from "../modals/diagonModal.js";
 
 function Products(props) {
@@ -10,11 +9,8 @@ function Products(props) {
   const [balance, setBalance] = useState(0)
   let productsHTML = [];
 
-  
-
   for (let i = 0; i < props.products.length; i++) {
     if (props.products[i].category === props.currentCategory) {
-      console.log("PRODUCTS", props.products[i].category);
 
       productsHTML.push(
         <div key={i}>
@@ -30,9 +26,6 @@ function Products(props) {
           <p className="prodStock">
             Quantity in Stock: {props.products[i].stock}
           </p>
-          {/* <Button id="owlPost" variant="contained"  disableElevation>
-            DELIVER VIA OWL POST
-          </Button> */}
           <DiagonModal balance={balance}/>
         </div>
       );

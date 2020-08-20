@@ -4,7 +4,6 @@ import LogoutButton from "../logoutButton.js"
 import { Link } from 'react-router-dom';
 import { Context } from '../../App.js';
 
-// import materialIcons from "material-icons";
 import {
   Search
 } from '@material-ui/icons';
