@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Chatroom from '../chatRoom';
 import PatronusModal from '../modals/patronusModal.js'
+import StudentPics from '../dumbledoresArmy'
 import { Context } from '../../App.js';
 
 import { Link } from 'react-router-dom';
@@ -18,10 +19,8 @@ import {
 function MainContent(props) {
   const { currentUser } = useContext(Context);
 
-  console.log('***** INSIDE MAIN CONTENT ******', currentUser)
 
   const clickHandler = async () => {
-    console.log('**************** inside click handler');
     let getStudent = await axios.get(
       `${process.env.REACT_APP_API}/student/id/${currentUser._id}`
     );
@@ -31,16 +30,14 @@ function MainContent(props) {
       balance = 0;
     }
     parseInt(balance);
-    console.log('***** BALANCE IN MAINCONTENT', balance);
     balance = balance + 20;
-    currentUser.gringCoin = currentUser.gringCoin +20;
-    console.log('***** BALANCE + 20 IN MAINCONTENT', balance);
-
+    currentUser.gringCoin = currentUser.gringCoin + 20;
     await axios.put(`${process.env.REACT_APP_API}/student/${currentUser._id}`, {
       gringCoin: balance,
     });
     return;
   };
+
 
   const { user } = useAuth0();
   return (
@@ -51,11 +48,11 @@ function MainContent(props) {
             <div className='leftSideHeaders'>
               <i className='leftColIcons' id='introIcon'></i>
 
-       
+
 
               <span> Location</span>
               <div className='leftSideActionIcon'>
-                
+
               </div>
 
             </div>
@@ -65,12 +62,12 @@ function MainContent(props) {
               <div id='userLocation'>
 
 
-              <LocationOn
-                    className='material-icons'
-                    style={{ color: 'grey' }}
-                  />
+                <LocationOn
+                  className='material-icons'
+                  style={{ color: 'grey' }}
+                />
                 <a href='https://bit.ly/3aAJhgy' target="_blank" rel="noopener noreferrer">
-                54.939196,-3.929788
+                  54.939196,-3.929788
                 </a>
 
               </div>
@@ -87,7 +84,7 @@ function MainContent(props) {
 
             <div className='patronusContainer'>
               <PatronusModal />
-              </div>
+            </div>
 
           </div>
 
@@ -116,7 +113,8 @@ function MainContent(props) {
             </div>
             <div id='photos'>
               <div className='tb'>
-                <div className='tr'>
+                <StudentPics />
+                {/* <div className='tr'>
                   <div className='td'></div>
                   <div className='td'></div>
                   <div className='td'></div>
@@ -130,7 +128,7 @@ function MainContent(props) {
                   <div className='td'></div>
                   <div className='td'></div>
                   <div className='td'></div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -143,10 +141,10 @@ function MainContent(props) {
             </div>
 
             <div className='patronusContainer'>
-            {/* <audio src="https://youtu.be/Htaj3o3JD8I" controls autoPlay /> */}
+              {/* <audio src="https://youtu.be/Htaj3o3JD8I" controls autoPlay /> */}
 
-            <iframe width="250" height="auto" title="soundtrack" src="https://www.youtube.com/embed/Htaj3o3JD8I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
+              <iframe width="250" height="auto" title="soundtrack" src="https://www.youtube.com/embed/Htaj3o3JD8I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
 
           </div>
 
@@ -247,14 +245,14 @@ function MainContent(props) {
                   </div>
                   <div className='td'>
 
-                  <Link to='/diagonAlley'>
-                  <div id="da" className="spacer">
-                  <Redeem
-                    className='material-icons'
-                    style={{ color: 'grey' }}
-                  />
-                  </div>
-                    <span className="textDec">DIAGON ALLEY</span>
+                    <Link to='/diagonAlley'>
+                      <div id="da" className="spacer">
+                        <Redeem
+                          className='material-icons'
+                          style={{ color: 'grey' }}
+                        />
+                      </div>
+                      <span className="textDec">DIAGON ALLEY</span>
                     </Link>
                   </div>
                 </div>

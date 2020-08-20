@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getUser } from '../store/student/studentAction.js';
 import { useAuth0 } from '@auth0/auth0-react';
+
 const HogwartStudent = (props) => {
   const { getStudent, student, user } = props;
   useEffect(() => {
