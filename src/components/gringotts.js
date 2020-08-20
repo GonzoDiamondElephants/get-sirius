@@ -10,6 +10,7 @@ function Gringotts() {
   //   `${process.env.REACT_APP_API}/student/id/${currentUser._id}`
   // )
 
+
   return (
     <div className='bank'>
       <div class='grinContainer'>
