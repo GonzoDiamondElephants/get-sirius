@@ -21,7 +21,7 @@
   min-height: 600px;
   height: 960px;
   border: 2px solid #000;
-  background-image: url(https://hpmedia.bloomsbury.com/rep/g/page-background-gc.png);
+  background-image: url("https://hpmedia.bloomsbury.com/rep/g/page-background-gc.png");
   margin: auto;
   margin-top: 55px;
   padding: 0 50px;
@@ -43,8 +43,8 @@
     min-height: 300px;
   padding: 5px 20px;
   height: 60%;
-  border: 2px solid black;
-  background-color: rgba(230, 230, 250, 0.399);
+  // border: 2px solid black;
+  // background-color: rgba(230, 230, 250, 0.399);
 }
 
 #myButton {
@@ -52,7 +52,7 @@
   width: 70%;
   border: 1px solid black;
   color: #fff;
-  font-size: 42px;
+  font-size: 4vw;
   text-decoration: none;
   margin-top: 100px;
   text-align: center;
