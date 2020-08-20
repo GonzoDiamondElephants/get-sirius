@@ -1,6 +1,6 @@
 import React, {setState, useState} from 'react';
 import LoginButton from './components/loginButton.js';
-import Axios from 'axios';
+import axios from 'axios';
 import store from '../src/store/index.js';
 import {Provider} from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -22,6 +22,9 @@ export const Context = React.createContext({currentUser: null, setCurrentUser: (
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
+
+
+
   return (
     <>
       <Provider store={store}>

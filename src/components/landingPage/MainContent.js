@@ -1,19 +1,39 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Chatroom from '../chatRoom';
 import { Context } from '../../App.js';
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
+import axios from 'axios';
 import {
-House,
-LocationOn,
-MonetizationOn,
-FlashOn,
-Redeem,
-ChatBubble,
+  House,
+  LocationOn,
+  MonetizationOn,
+  FlashOn,
+  Redeem,
+  ChatBubble,
 } from '@material-ui/icons';
 
 function MainContent(props) {
   const { currentUser } = useContext(Context);
+
+  const clickHandler = async () => {
+    console.log('**************** inside click handler');
+    let getStudent = await axios.get(
+      `${process.env.REACT_APP_API}/student/id/${currentUser._id}`
+    );
+    console.log('getstudent from main content.js', getStudent);
+    let balance = getStudent.gringCoin;
+    if (!balance) {
+      balance = 0;
+    }
+    parseInt(balance);
+    balance += 20;
+    await axios.put(`${process.env.REACT_APP_API}/student/${currentUser._id}`, {
+      gringCoin: balance,
+    });
+    return;
+  };
+
   const { user } = useAuth0();
   return (
     <div id='mainContent'>
@@ -22,15 +42,21 @@ function MainContent(props) {
           <div className='leftComponentContainers'>
             <div className='leftSideHeaders'>
               <i className='leftColIcons' id='introIcon'></i>
+
+       
+
               <span> Location</span>
               <div className='leftSideActionIcon'>
                 
               </div>
+
             </div>
             <div id='introBox'>
               <div id='introLine'> Hogwarts</div>
 
               <div id='userLocation'>
+
+
               <LocationOn
                     className='material-icons'
                     style={{ color: 'grey' }}
@@ -38,6 +64,7 @@ function MainContent(props) {
                 <a href='https://bit.ly/3aAJhgy' target="_blank" rel="noopener noreferrer">
                 54.939196,-3.929788
                 </a>
+
               </div>
             </div>
           </div>
@@ -74,7 +101,7 @@ function MainContent(props) {
               </span>
             </div> */}
             {/* <div> */}
-              {/* <div className='quizContainer'>
+            {/* <div className='quizContainer'>
                 <a href='https://www.google.com/' className='quizAction'>
                   <img
                     src='https://infinitemediaresources.com/wp-content/uploads/2016/08/question-mark-small.png'
@@ -83,7 +110,7 @@ function MainContent(props) {
                   <span>My favorite className at Hogwarts is...</span>
                 </a>
               </div> */}
-              {/* <div className='quizContainer'>
+            {/* <div className='quizContainer'>
                 <a
                   href='https://www.google.com/'
                   className='quizAction'
@@ -118,48 +145,54 @@ function MainContent(props) {
               <div className='td'>
                 <div className='tb' id='profileNavText'>
                   <div className='td active'>
-                  <div className="spacer">
-                    <ChatBubble
-                    className='material-icons'
-                    style={{ color: 'black' }}
-                  />
-                  </div>
-                    <span>CHAT</span> 
+                    <div className='spacer'>
+                      <ChatBubble
+                        className='material-icons'
+                        style={{ color: 'black' }}
+                      />
+                    </div>
+                    <span>CHAT</span>
                   </div>
                   <div className='td'>
-                  <Link to='/gitSorted'>
-                    <div className="spacer">
-                  <House
-                    className='material-icons'
-                    style={{ color: 'grey' }}
-                  />
-                  </div>
-                    <span  className="textDec">GITSORTED</span>
+                    <Link to='/gitSorted'>
+                      <div className='spacer'>
+                        <House
+                          className='material-icons'
+                          style={{ color: 'grey' }}
+                        />
+                      </div>
+                      <span className='textDec'>GITSORTED</span>
                     </Link>
                   </div>
                   <div className='td'>
                     <Link to='/gringotts'>
-                  <div className="spacer">
-
-                  <MonetizationOn
-                    className='material-icons'
-                    style={{ color: 'grey' }}
-                  /></div>
-                    <span className="textDec">GRINGOTTS</span>
+                      <div className='spacer'>
+                        <MonetizationOn
+                          className='material-icons'
+                          style={{ color: 'grey' }}
+                        />
+                      </div>
+                      <span className='textDec'>GRINGOTTS</span>
                     </Link>
                   </div>
                   <div className='td'>
-                  <a href="https://stupefied-pasteur-d48e4c.netlify.app/" rel="noopener noreferrer" target="_blank">
-                  <div className="spacer">
-                  <FlashOn
-                    className='material-icons'
-                    style={{ color: 'grey' }}
-                  />
-                  </div>
-                    <span className="textDec">CLASSES</span>
-                  </a>
+                    <a
+                      href='https://stupefied-pasteur-d48e4c.netlify.app/'
+                      rel='noopener noreferrer'
+                      target='_blank'
+                      onClick={clickHandler}
+                    >
+                      <div className='spacer'>
+                        <FlashOn
+                          className='material-icons'
+                          style={{ color: 'grey' }}
+                        />
+                      </div>
+                      <span className='textDec'>CLASSES</span>
+                    </a>
                   </div>
                   <div className='td'>
+
                   <Link to='/diagonAlley'>
                   <div id="da" className="spacer">
                   <Redeem
@@ -173,7 +206,7 @@ function MainContent(props) {
                 </div>
               </div>
               {/* <div className='td' id='profileIcon'> */}
-                {/* <i className='material-icons'>keyboard_arrow_down</i> */}
+              {/* <i className='material-icons'>keyboard_arrow_down</i> */}
               {/* </div> */}
             </div>
           </div>
@@ -210,15 +243,12 @@ function MainContent(props) {
             <div id='chatContentMain'>
               <div className='tb'>
                 <div className='td' id='userPhotoIcon'>
-                <img id="chatPic" src={user.picture} alt={user.name} />
+                  <img id='chatPic' src={user.picture} alt={user.name} />
                   {/* <img
                     src='https://pyxis.nymag.com/v1/imgs/171/429/c95b07becc2bef532d9669b4824ea4386f-08-harry-potter.rsquare.w1200.jpg'
                     alt=''
                   /> */}
                 </div>
-
-
-
 
                 <div className='td' id='chatInputBox'>
                   {/* <input type='text' placeholder="What's on your mind?" /> */}
@@ -227,14 +257,13 @@ function MainContent(props) {
                 </div>
               </div>
               {/* <div id='insertEmoji'> */}
-                {/* <i gut className='material-icons trigger'>
+              {/* <i gut className='material-icons trigger'>
                   insert_emoticon
                 </i> */}
               {/* </div> */}
             </div>
           </div>
           <div>
- 
             {/* <div className="postedChat">
               <div className="tb">
                 <a href="https://www.google.com/" className="td postersPic">
