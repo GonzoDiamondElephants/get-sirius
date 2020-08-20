@@ -42,25 +42,36 @@ function MainContent(props) {
           <div className='leftComponentContainers'>
             <div className='leftSideHeaders'>
               <i className='leftColIcons' id='introIcon'></i>
-              <span>Location</span>
-              <div className='leftSideActionIcon'></div>
+
+       
+
+              <span> Location</span>
+              <div className='leftSideActionIcon'>
+                
+              </div>
+
             </div>
             <div id='introBox'>
-              <div id='introLine'>Hogwarts</div>
+              <div id='introLine'> Hogwarts</div>
 
               <div id='userLocation'>
-                <LocationOn
-                  className='material-icons'
-                  style={{ color: 'grey' }}
-                />
-                <a href='https://bit.ly/3aAJhgy'>54.939196,-3.929788</a>
+
+
+              <LocationOn
+                    className='material-icons'
+                    style={{ color: 'grey' }}
+                  />
+                <a href='https://bit.ly/3aAJhgy' target="_blank" rel="noopener noreferrer">
+                54.939196,-3.929788
+                </a>
+
               </div>
             </div>
           </div>
           <div className='leftComponentContainers leftSpacing'>
             <div className='leftSideHeaders'>
               <i className='leftColIcons' id='photoIcon'></i>
-              <span>Hogwarts Students</span>
+              <span> Hogwarts Students</span>
             </div>
             <div id='photos'>
               <div className='tb'>
@@ -181,13 +192,16 @@ function MainContent(props) {
                     </a>
                   </div>
                   <div className='td'>
-                    <div id='da' className='spacer'>
-                      <Redeem
-                        className='material-icons'
-                        style={{ color: 'grey' }}
-                      />
-                    </div>
-                    <span className='textDec'>DIAGON ALLEY</span>
+
+                  <Link to='/diagonAlley'>
+                  <div id="da" className="spacer">
+                  <Redeem
+                    className='material-icons'
+                    style={{ color: 'grey' }}
+                  />
+                  </div>
+                    <span className="textDec">DIAGON ALLEY</span>
+                    </Link>
                   </div>
                 </div>
               </div>

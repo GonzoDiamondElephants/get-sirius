@@ -7,11 +7,13 @@ import React, {
 } from 'react';
 import HomeButton from './homeButton';
 import axios from 'axios';
+import AnimatedModal from './modals/sortedModal.js'
 import { Context } from '../App';
 
 const GitSorted = () => {
   const { currentUser } = useContext(Context);
-
+  
+  
   const [houseVal, setHouseVal] = useState(0);
   const [faveClass, setFaveClass] = useState(0);
   const [companionAnimal, setCompanionAnimal] = useState(0);
@@ -149,9 +151,8 @@ const GitSorted = () => {
             <option value='4'>Tales of Beedle the Bard</option>
           </select>
           <br></br>
-          <button className='glow' type='submit' id='expectoApplyo'>
-            Expecto Applyo
-          </button>
+       <AnimatedModal /> 
+        <br></br>
         </form>
       </div>
     </div>

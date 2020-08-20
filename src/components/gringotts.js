@@ -14,17 +14,11 @@ function Gringotts() {
     <div className='bank'>
       <div class='grinContainer'>
         <HomeButton />
-
-        {/* 
-        <img
-          src="https://raw.githubusercontent.com/testOrg762/testPic/master/journal.png"
-          alt="journal"
-          id="journalImg"
-        /> */}
         <div class='text-block'>
           <h1 id='grinHead'>Welcome to Gringotts</h1>
           <p id='grinText'>Your current balance is: </p>
           <p id='grinBalance'> {balance} Gringcoin Galleons</p>
+
         </div>
       </div>
     </div>
