@@ -33,18 +33,32 @@
 } 
 
 #introIcon {
-   background-image: url('https://imagizer.imageshack.com/img922/7749/C8tmwX.png');
-   background-position: 0 -87px;
-
-}
-
-#photoIcon {
-   background-image: url('https://imagizer.imageshack.com/img923/7847/sRapnM.png');
+   background-image: url('https://image.flaticon.com/icons/svg/556/556017.svg');
    background-position: 0 0;
 
 }
 
+#sudio {
+    width: 250px;
+}
 
+#songIcon {
+    background-image: url('https://image.flaticon.com/icons/svg/753/753854.svg');
+    background-position: 0 0;
+ 
+ }
+
+#photoIcon {
+   background-image: url('https://image.flaticon.com/icons/svg/2545/2545678.svg');
+   background-position: 0 0;
+
+}
+
+#patronusIcon {
+    background-image: url('https://image.flaticon.com/icons/svg/714/714007.svg');
+    background-position: 0 0;
+ 
+ }
 .leftSideHeaders{
    position: relative;
    padding-right: 24px;
@@ -151,30 +165,6 @@
     }
 }
 
-
-
-
-#addToQuiz {
-    color: #858585;
-    text-align: center;
-    margin-top: 10px;
-    background-color: #fff;
-    border-color: #f1f1f1;
-
-    i {
-        font-size: 17px;
-        margin-right: -3px;
-        vertical-align: middle;
-    }
-
-    span {
-        color: #858585;
-        font-size: 12.4px;
-        position: relative;
-        top: -1px;
-    }     
-}
-
 #trevorBox {
    font-size: 14px;
    color: #686868;
@@ -229,6 +219,18 @@
         
     }     
     
+    .patButton {
+        display: inline;
+    }
+
+  div#patronusButton {
+
+        text-emphasis: none;
+        text-decoration: none;
+        margin-left: 10px;
+        
+    }
+
     .material-icons {
         display: inline-block;
         font-size: 36px;

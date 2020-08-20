@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import Chatroom from '../chatRoom';
+import PatronusModal from '../modals/patronusModal.js'
 import { Context } from '../../App.js';
+
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
@@ -68,6 +70,39 @@ function MainContent(props) {
               </div>
             </div>
           </div>
+
+
+
+          <div className='leftComponentContainers leftSpacing'>
+            <div className='leftSideHeaders'>
+              <i className='leftColIcons' id='patronusIcon'></i>
+              <span> Patronus </span>
+            </div>
+
+            <div className='patronusContainer'>
+              <PatronusModal />
+              </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <div className='leftComponentContainers leftSpacing'>
             <div className='leftSideHeaders'>
               <i className='leftColIcons' id='photoIcon'></i>
@@ -93,15 +128,36 @@ function MainContent(props) {
               </div>
             </div>
           </div>
+
+
           <div className='leftComponentContainers leftSpacing'>
-            {/* <div className='leftSideHeaders'>
+            <div className='leftSideHeaders'>
+              <i className='leftColIcons' id='songIcon'></i>
+              <span> Soundtrack </span>
+            </div>
+
+            <div className='patronusContainer'>
+            {/* <audio src="https://youtu.be/Htaj3o3JD8I" controls autoPlay /> */}
+
+            <iframe width="250" height="auto" title="soundtrack" src="https://www.youtube.com/embed/Htaj3o3JD8I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+
+          </div>
+
+
+
+
+
+
+          {/* <div className='leftComponentContainers leftSpacing'>
+            <div className='leftSideHeaders'>
               <i className='leftColIcons' id='photoIcon'></i>
               <span>
                 Did You Know<i id='k-nm'>1</i>
               </span>
-            </div> */}
-            {/* <div> */}
-            {/* <div className='quizContainer'>
+            </div>
+            <div>
+            <div className='quizContainer'>
                 <a href='https://www.google.com/' className='quizAction'>
                   <img
                     src='https://infinitemediaresources.com/wp-content/uploads/2016/08/question-mark-small.png'
@@ -109,19 +165,11 @@ function MainContent(props) {
                   />
                   <span>My favorite className at Hogwarts is...</span>
                 </a>
-              </div> */}
-            {/* <div className='quizContainer'>
-                <a
-                  href='https://www.google.com/'
-                  className='quizAction'
-                  id='addToQuiz'
-                >
-                  <i className='material-icons'>add</i>
-                  <span>Add Answer</span>
-                </a>
-              </div> */}
-            {/* </div> */}
-          </div>
+              </div>
+            <div className='quizContainer'>
+              </div>
+            </div>
+          </div> */}
           <div id='trevorBox'>
             <a href='https://give.thetrevorproject.org/give/63307/#!/donation/checkout?c_src=pride2020&c_src2=headerdonatebutton'>
               Give To The Trevor Project -{' '}

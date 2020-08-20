@@ -36,6 +36,7 @@ const GitSorted = () => {
       console.log('balance balance', balance);
       console.log('typeof balance', typeof balance);
       console.log('house gitSortes', theHouse);
+      console.log('current user', currentUser);
       axios.put(`${process.env.REACT_APP_API}/student/${currentUser._id}`, {
         houseDescription: theHouse.description,
         houseIcon: theHouse.icon,
