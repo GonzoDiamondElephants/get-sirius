@@ -85,7 +85,7 @@ const GitSorted = () => {
       <HomeButton />
       <div id='formWrapper'>
         <form onSubmit={handleSubmit}>
-          <h2 id='formTitle'>Name From State Here, welcome to Hogwarts</h2>
+          <h2 id='formTitle'>Welcome to Hogwarts</h2>
           <p className='quizQuestion'>What class are you most excited about?</p>
           <select name='favClass' onChange={handleFaveClass}>
             <option value='0' disabled selected>
